@@ -1,0 +1,159 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Aptech</title>
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3" href="index.html"><i class="fa-duotone fa-graduation-cap"></i> Aptech</a>
+      <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbar_mobile">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <div class="nav-item dropdown">
+            <a class="nav-link active" role="button" data-bs-toggle="dropdown">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu border-0 shadow-lg">
+              <li><a class="dropdown-item active" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="">Page 2</a></li>
+              <li><a class="dropdown-item" href="">Page 3</a></li>
+            </ul>
+          </div>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </div>
+        <form class="ms-auto my-auto d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-primary" type="submit"><i class="fa-regular fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end" id="navbar_mobile">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fs-3"><i class="fa-duotone fa-graduation-cap"></i> Aptech</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form class="d-flex">
+        <input class="form-control form-control-lg me-2" type="search" placeholder="Search">
+        <button class="btn btn-lg btn-outline-primary" type="submit"><i class="fa-regular fa-search"></i></button>
+      </form>
+      <nav class="nav flex-column nav-pills fs-3">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="">Page 2</a>
+        <a class="nav-link" href="">Page 3</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div class="bg-dark py-5">
+      <div class="container my-5 py-5 text-white">
+        <div class="display-1"><i class="fa-duotone fa-folder-image"></i> Gallery</div>
+      </div>
+    </div>
+
+    <div id="gallery" class="container my-5 py-5">
+      <div class="loader text-center py-5">
+        <i class="fa-solid fa-loader fa-spin fa-5x"></i>
+      </div>
+
+      <div class="row g-2" data-bs-toggle="modal" data-bs-target="#image_modal"></div>
+    </div>
+
+    <div class="modal fade" id="image_modal">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content text-bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title"><span id="current_slide">1</span>/<span id="total_slide"></span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+
+            <div id="g_slider" class="carousel slide">
+              <div class="carousel-inner">
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#g_slider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#g_slider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-5 text-center bg-light">
+    <div class="container">
+      <i class="fa-duotone fa-graduation-cap fa-5x mb-3"></i>
+      <h1>Aptech</h1>
+      <div class="d-flex justify-content-center align-items-center gap-3 my-4">
+        <i class="fa-brands fa-facebook fa-2x"></i>
+        <i class="fa-brands fa-twitter fa-2x"></i>
+        <i class="fa-brands fa-instagram fa-2x"></i>
+      </div>
+      <span>
+        &copy; 2023 - Designed by <strong><span>Amaan Al Mir</span></strong>
+      </span>
+    </div>
+  </footer>
+
+  <div id="scroll-to-top">
+    <i class="fa-solid fa-circle-chevron-up fa-3x"></i>
+  </div>
+
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <script>
+    window.onload = async function () {
+      await load_gallery()
+      document.querySelector('#gallery .loader').remove();
+
+      const carouselItems = document.querySelectorAll('.carousel-item');
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            const target = mutation.target;
+            if (target.classList.contains('active')) {
+              const index = Array.from(carouselItems).indexOf(target);
+              $('#current_slide').html(index + 1)
+            }
+          }
+        });
+      });
+
+      carouselItems.forEach((item) => {
+        observer.observe(item, {
+          attributes: true
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>

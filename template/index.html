@@ -1,0 +1,146 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Aptech</title>
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3" href="index.html"><i class="fa-duotone fa-graduation-cap"></i> Aptech</a>
+      <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbar_mobile">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="index.html">Home</a>
+          <div class="nav-item dropdown">
+            <a class="nav-link" role="button" data-bs-toggle="dropdown">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu border-0 shadow-lg">
+              <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="">Page 2</a></li>
+              <li><a class="dropdown-item" href="">Page 3</a></li>
+            </ul>
+          </div>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </div>
+        <form class="ms-auto my-auto d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-primary" type="submit"><i class="fa-regular fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end" id="navbar_mobile">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fs-3"><i class="fa-duotone fa-graduation-cap"></i> Aptech</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form class="d-flex">
+        <input class="form-control form-control-lg me-2" type="search" placeholder="Search">
+        <button class="btn btn-lg btn-outline-primary" type="submit"><i class="fa-regular fa-search"></i></button>
+      </form>
+      <nav class="nav flex-column nav-pills fs-3">
+        <a class="nav-link active" href="">Home</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="">Page 2</a>
+        <a class="nav-link" href="">Page 3</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div id="slider" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#slider" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#slider" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="images/img-1.jpg">
+          <div class="carousel-caption">
+            <h1 class="display-3">SLIDE 1</h1>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="images/img-2.jpg">
+          <div class="carousel-caption">
+            <h1 class="display-3">SLIDE 2</h1>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="images/img-3.jpg">
+          <div class="carousel-caption">
+            <h1 class="display-3">SLIDE 3</h1>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container my-5 py-5 text-center">
+      <i class="fa-duotone fa-graduation-cap fa-10x"></i>
+      <h1 class="display-1">Welcome to <span class="fw-bold">Aptech</span>!</h1>
+      <p class="fs-4">Aptech is one of the leading, trusted, and oldest education & training institutions in Qatar.
+      </p>
+    </div>
+
+    <div class="container my-5 py-5">
+      
+    </div>
+
+    <div id="home_gallery_preview" class="d-flex">
+      <div class="img-box"><img src="images/img-1.jpg"></div>
+      <div class="img-box"><img src="images/img-2.jpg"></div>
+      <div class="img-box"><img src="images/img-3.jpg"></div>
+      <a class="btn btn-lg btn-outline-light" href="gallery.html"><span class="display-1">Open gallery</span></a>
+    </div>
+  </main>
+
+  <footer class="py-5 text-center bg-light">
+    <div class="container">
+      <i class="fa-duotone fa-graduation-cap fa-5x mb-3"></i>
+      <h1>Aptech</h1>
+      <div class="d-flex justify-content-center align-items-center gap-3 my-4">
+        <i class="fa-brands fa-facebook fa-2x"></i>
+        <i class="fa-brands fa-twitter fa-2x"></i>
+        <i class="fa-brands fa-instagram fa-2x"></i>
+      </div>
+      <span>
+        &copy; 2023 - Designed by <strong><span>Amaan Al Mir</span></strong>
+      </span>
+    </div>
+  </footer>
+
+  <div id="scroll-to-top">
+    <i class="fa-solid fa-circle-chevron-up fa-3x"></i>
+  </div>
+
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
